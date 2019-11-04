@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"strconv"
 )
 
 var name = "马胜杰"
@@ -80,5 +81,9 @@ func main() {
 	var stockA int = 65;
 	stockB := string(stockA)
 	fmt.Println(stockB)
+	stockC := strconv.Itoa(stockA)
+	fmt.Println(stockC);
+	stockD,_ := strconv.Atoi(stockC)
+	fmt.Println(stockD)
 
 }
