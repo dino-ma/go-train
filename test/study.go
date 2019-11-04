@@ -75,4 +75,10 @@ func main() {
 	intA := int(floatA)
 	fmt.Println(intA)
 
+	//课堂作业
+
+	var stockA int = 65;
+	stockB := string(stockA)
+	fmt.Println(stockB)
+
 }
