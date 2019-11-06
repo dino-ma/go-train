@@ -9,9 +9,9 @@ import (
 
 var name = "马胜杰"
 
-const HOST  = "https://www.baidu.com"
+const HOST = "https://www.baidu.com"
 
-const  (
+const (
 	A = iota
 	B
 	C
@@ -20,10 +20,10 @@ const  (
 	F
 )
 
-type(
-	byte int8
-	文本 string//开发中不要用
-	byteSize int64//下载
+type (
+	byte     int8
+	文本       string //开发中不要用
+	byteSize int64  //下载
 )
 
 func main() {
@@ -39,13 +39,13 @@ func main() {
 	fmt.Println(C)
 	fmt.Println(D)
 	fmt.Println("零值：")
-	var a int;
-	var b bool;
-	var c float32;
-	var d string;
-	var e [1]int;
-	var f [1]bool;
-	var g [1]byte;
+	var a int
+	var b bool
+	var c float32
+	var d string
+	var e [1]int
+	var f [1]bool
+	var g [1]byte
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
@@ -61,16 +61,14 @@ func main() {
 	//开发中不要用
 	var bbb 文本
 	bbb = "中文类型名牛逼牛逼～"
-	fmt.Println(bbb);
+	fmt.Println(bbb)
 
-	var byteSize byteSize//文件下载大小
-	byteSize = 123123;
+	var byteSize byteSize //文件下载大小
+	byteSize = 123123
 	fmt.Println(byteSize)
 
-
-	xxx := false;
-	fmt.Println(xxx);
-
+	xxx := false
+	fmt.Println(xxx)
 
 	floatA := 1.1
 	intA := int(floatA)
@@ -78,12 +76,12 @@ func main() {
 
 	//课堂作业
 
-	var stockA int = 65;
+	var stockA int = 65
 	stockB := string(stockA)
 	fmt.Println(stockB)
 	stockC := strconv.Itoa(stockA)
-	fmt.Println(stockC);
-	stockD,_ := strconv.Atoi(stockC)
+	fmt.Println(stockC)
+	stockD, _ := strconv.Atoi(stockC)
 	fmt.Println(stockD)
 
 }
