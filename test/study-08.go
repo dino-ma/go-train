@@ -48,9 +48,7 @@ func main() {
 	sort.Ints(ss)
 	fmt.Println(ss)
 
-
 	//map sort
-
 
 	//------homework--//
 
@@ -60,8 +58,8 @@ func main() {
 	homeM3 := make(map[string]int, len(homeM1))
 
 	homeI := 1
-	for homeK,_ := range homeM1  {
-		homeM3[homeM1[homeK]] = homeK
+	for homeK,homeV:= range homeM1  {
+		homeM3[homeV] = homeK
 		homeI++
 	}
 
