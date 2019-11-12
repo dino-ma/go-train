@@ -33,9 +33,67 @@ func main() {
 	}
 	o()
 
-	f :=closure(10)//返回函数体
-	fmt.Println(f(1))//调用闭包函数
-	fmt.Println(f(2))//调用闭包函数
+	f := closure(10)  //返回函数体
+	fmt.Println(f(1)) //调用闭包函数
+	fmt.Println(f(2)) //调用闭包函数
+
+	fmt.Println("-----defer---")
+
+	//fmt.Println("a")
+	//defer fmt.Println("b")
+	//defer fmt.Println("c")
+	//for i := 0; i < 3 ; i++  {
+	//	defer fmt.Println(i)
+	//}
+	//fmt.Println("for defer")
+	//
+	//for i:=0;i<3 ;i++  {
+	//	defer func() {
+	//		fmt.Println(i)
+	//	}()
+	//
+	//}
+
+	//msjTestA()
+	//msjTestB()
+	//msjTestC()
+
+	//homework
+	var fs = [4]func(){}
+	for i := 0; i < 4; i++ {
+		defer fmt.Println("defer i=", i) //栈调用  先进后出    先进  后出
+		defer func() {
+			fmt.Println("defer_closure i =", i)//            后进  先出
+		}()
+		fs[i] = func() {//first print
+			fmt.Println("closure i =", i)
+		}
+	}
+
+	for _, f := range fs {
+		f()
+
+	}
+	//这个作业太牛逼了
+}
+
+func msjTestA() {
+	fmt.Println("Func A")
+}
+
+func msjTestB() {
+	//如果有PANINC 则recover会返回panic 信息
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("recover in B panic:", err)
+		}
+	}()
+	panic("Panic in B")
+
+}
+
+func msjTestC() {
+	fmt.Println("Func C")
 }
 
 func msjTest(a int, b string, c int) (int, string, int) {
